@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_background"
+    tools:context=".SubmitActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/main_padding"
+            android:paddingTop="@dimen/main_padding"
+            android:paddingEnd="@dimen/main_padding">
+
+            <ImageView
+                android:id="@+id/imageGADS"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/submit_top_banner_height"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_gads" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/project_submission"
+                android:textColor="@color/colorOrange"
+                style="@style/headerText"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageGADS" />
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="#ffffff"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <EditText
+        android:id="@+id/textFirstName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/submit_margin"
+        android:layout_marginEnd="@dimen/submit_margin_small"
+        android:background="@drawable/text_style"
+        android:ems="8"
+        android:hint="@string/first_name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/textEmailAddress"
+        app:layout_constraintEnd_toStartOf="@+id/textLastName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appBarLayout" />
+
+    <EditText
+        android:id="@+id/textLastName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/submit_margin_small"
+        android:layout_marginEnd="@dimen/submit_margin"
+        android:background="@drawable/text_style"
+        android:ems="8"
+        android:inputType="textPersonName"
+        android:hint="@string/last_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textFirstName"
+        app:layout_constraintTop_toTopOf="@+id/textFirstName" />
+
+    <EditText
+        android:id="@+id/textEmailAddress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_style"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/email_address"
+        app:layout_constraintBottom_toTopOf="@+id/textGithubLink"
+        app:layout_constraintEnd_toEndOf="@+id/textLastName"
+        app:layout_constraintStart_toStartOf="@+id/textFirstName"
+        app:layout_constraintTop_toBottomOf="@+id/textFirstName" />
+
+    <EditText
+        android:id="@+id/textGithubLink"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/text_style"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="@string/project_on_github_link"
+        app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
+        app:layout_constraintEnd_toEndOf="@+id/textEmailAddress"
+        app:layout_constraintStart_toStartOf="@+id/textEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/textEmailAddress" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_rounded_orange"
+        android:text="@string/submit"
+        android:textColor="@color/colorAccent"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textGithubLink"
+        app:layout_constraintStart_toStartOf="@+id/textGithubLink"
+        app:layout_constraintTop_toBottomOf="@+id/textGithubLink" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
