@@ -5,13 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class LeaderBoardActivity extends AppCompatActivity {
 
     private TabLayout tabs;
     private ViewPager viewPager;
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_leader_board);
         tabs = findViewById(R.id.tabs);
         leadersPagerAdapter = new LeadersPagerAdapter(getSupportFragmentManager(), tabs.getTabCount());
         viewPager = findViewById(R.id.view_pager);
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //open the submit activity when submit button is clicked
-                Intent intent=new Intent(MainActivity.this,SubmitActivity.class);
+                Intent intent=new Intent(LeaderBoardActivity.this,SubmitActivity.class);
                 startActivity(intent);
             }
         });

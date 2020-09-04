@@ -47,7 +47,8 @@ public class SubmitActivity extends AppCompatActivity {
     Retrofit retrofit;
     GadsSubmitInterface submitProject;
 
-    static final String BASE_FORMS_URL = "https://docs.google.com/forms/u/0/d/e/";
+    //static final String BASE_FORMS_URL = "https://docs.google.com/forms/u/0/d/e/";    //personal forms
+    static final String BASE_FORMS_URL = "https://docs.google.com/forms/d/e/";          //GADS forms
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

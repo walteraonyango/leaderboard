@@ -2,10 +2,10 @@ package me.wakello.android.leaderboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
 
 import java.net.URL;
@@ -13,11 +13,13 @@ import java.util.ArrayList;
 
 public class SplashActivity extends AppCompatActivity {
 
+    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //setTheme(R.style.SplashTheme);
+        setTheme(R.layout.activity_splash);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        //setContentView(R.layout.activity_splash);
 
         //Execute Async task to get Data from the web API while splash screen is displayed and is doing nothing.
         new LeadersQueryTask().execute();
@@ -68,7 +70,7 @@ public class SplashActivity extends AppCompatActivity {
             DataManager.getInstance().setSkillIqLeaders(skillIqLeaders);
 
             //After successfully getting the data from web API and updating DataManager, we now need to call the MainActivity.
-            Intent intent=new Intent(SplashActivity.this,MainActivity.class);
+            Intent intent=new Intent(SplashActivity.this, LeaderBoardActivity.class);
             startActivity(intent);
             finish();
         }
