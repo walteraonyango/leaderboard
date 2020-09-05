@@ -18,4 +18,9 @@
         <item>Learning Leaders</item>
         <item>Skill IQ Leaders</item>
     </string-array>
+
+    <string-array name="display_details">
+        <item>learning hours</item>
+        <item>skill IQ Score</item>
+    </string-array>
 </resources>

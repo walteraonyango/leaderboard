@@ -14,11 +14,15 @@ public class LeadersPagerAdapter extends FragmentPagerAdapter {
     private Fragment[] leadersFragments;
     private String[] tabTitles;
 
-    public LeadersPagerAdapter(@NonNull FragmentManager fm, int behavior, String[] tabTitles) {
+    public LeadersPagerAdapter(@NonNull FragmentManager fm, int behavior, String[] tabTitles, int[] defaultIcon) {
         super(fm, behavior);
         mTabCount = behavior;
         this.tabTitles = tabTitles;
-        leadersFragments = new Fragment[] {new LearningLeaders(), new SkillIQLeaders()};
+
+        leadersFragments = new Fragment[] {
+                new LeadersFragment(Constants.LEARNING_LEADERS, defaultIcon[Constants.LEARNING_LEADERS]),
+                new LeadersFragment(Constants.SKILL_IQ_LEADERS, defaultIcon[Constants.SKILL_IQ_LEADERS])
+        };
     }
 
 

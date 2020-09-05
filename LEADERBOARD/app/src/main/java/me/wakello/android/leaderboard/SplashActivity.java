@@ -71,7 +71,6 @@ public class SplashActivity extends AppCompatActivity {
 
             //After successfully getting the data from web API and updating DataManager, we now need to call the MainActivity.
             Intent intent=new Intent(SplashActivity.this, LeaderBoardActivity.class);
-            //Intent intent=new Intent(SplashActivity.this, MainActivity.class);
             startActivity(intent);
             finish();
         }

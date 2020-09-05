@@ -25,10 +25,18 @@ public class LeaderBoardActivity extends AppCompatActivity {
         Resources res = getResources();
         String[] tabTitles = res.getStringArray(R.array.tab_titles);
 
-        leadersPagerAdapter = new LeadersPagerAdapter(getSupportFragmentManager(), tabs.getTabCount(), tabTitles);
+        //leadersPagerAdapter = new LeadersPagerAdapter(getSupportFragmentManager(), tabs.getTabCount(), tabTitles);
+        //viewPager = findViewById(R.id.view_pager);
+        //viewPager.setAdapter(leadersPagerAdapter);
+        //tabs.setupWithViewPager(viewPager);
+        int[] defaultIcon = {R.drawable.ic_top_learner, R.drawable.ic_skill_iq_trimmed};
+        leadersPagerAdapter = new LeadersPagerAdapter(getSupportFragmentManager(), tabs.getTabCount(), tabTitles, defaultIcon);
         viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(leadersPagerAdapter);
         tabs.setupWithViewPager(viewPager);
+
+
+
 
         Button btnSubmit = findViewById(R.id.submitButton);
 
