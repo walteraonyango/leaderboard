@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 
 import java.net.URL;
@@ -69,10 +70,23 @@ public class SplashActivity extends AppCompatActivity {
             ArrayList<Leader> skillIqLeaders = ApiUtil.getLeadersFromJson(result.get(1), skillIqLeaderString);
             DataManager.getInstance().setSkillIqLeaders(skillIqLeaders);
 
+
             //After successfully getting the data from web API and updating DataManager, we now need to call the MainActivity.
             Intent intent=new Intent(SplashActivity.this, LeaderBoardActivity.class);
             startActivity(intent);
             finish();
+
+            //Handler handler;
+            //handler = new Handler();
+            //handler.postDelayed(new Runnable() {
+            //    @Override
+            //   public void run() {
+            //        Intent intent=new Intent(SplashActivity.this, LeaderBoardActivity.class);
+            //        startActivity(intent);
+            //        finish();
+            //    }
+            //}, 3000);
+
         }
     }
 }
