@@ -1,6 +1,7 @@
 package me.wakello.android.leaderboard;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,14 +22,17 @@ public class LeaderBoardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leader_board);
         tabs = findViewById(R.id.tabs);
-        leadersPagerAdapter = new LeadersPagerAdapter(getSupportFragmentManager(), tabs.getTabCount());
+        Resources res = getResources();
+        String[] tabTitles = res.getStringArray(R.array.tab_titles);
+
+        leadersPagerAdapter = new LeadersPagerAdapter(getSupportFragmentManager(), tabs.getTabCount(), tabTitles);
         viewPager = findViewById(R.id.view_pager);
         viewPager.setAdapter(leadersPagerAdapter);
         tabs.setupWithViewPager(viewPager);
 
         Button btnSubmit = findViewById(R.id.submitButton);
 
-        //Add onclick listner to the button
+        //Add onclick listener to the button
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -37,7 +41,6 @@ public class LeaderBoardActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 
     /*@Override

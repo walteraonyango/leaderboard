@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">LEADERBOARD</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
-    <string name="learning_leaders">Learning Leaders</string>
-    <string name="skill_iq_leaders">Skill IQ Leaders</string>
-    <string name="learning_hours">learning hours</string>"skill IQ Score"
+    <string name="learning_hours">learning hours</string>
     <string name="skill_iq_score">skill IQ Score</string>
     <string name="submit">Submit</string>
     <!-- TODO: Remove or change this placeholder text -->
@@ -18,4 +14,8 @@
     <string name="are_you_sure">Are you sure<big>?</big></string>
     <string name="yes">Yes</string>
     <string name="project_submission">Project Submission</string>
+    <string-array name="tab_titles">
+        <item>Learning Leaders</item>
+        <item>Skill IQ Leaders</item>
+    </string-array>
 </resources>
